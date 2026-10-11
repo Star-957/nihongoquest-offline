@@ -1,0 +1,21 @@
+{
+  "name": "nihongoquest-offline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local Japanese practice demo and reusable offline learning core",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "build": "tsc && node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "check:public": "node scripts/check-public.mjs",
+    "verify": "npm test && npm run test:e2e && npm run check:public"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "typescript": "7.0.2"
+  }
+}

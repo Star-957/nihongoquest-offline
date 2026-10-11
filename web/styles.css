@@ -1,0 +1,38 @@
+:root { font-family: system-ui, sans-serif; color: #183a36; background: #f7f6ef; line-height: 1.6; }
+* { box-sizing: border-box; }
+body { max-width: 52rem; margin: 0 auto; padding: 2rem 1.25rem; }
+header { padding: 1rem 0 2rem; border-bottom: 2px solid #183a36; }
+.eyebrow { letter-spacing: .16em; font-size: .8rem; font-weight: 700; }
+h1 { font-size: clamp(2rem, 7vw, 3.6rem); line-height: 1.1; margin: .75rem 0; }
+h2 { font-size: 1.65rem; line-height: 1.3; }
+h3 { margin-top: 0; }
+main { margin: 2rem 0; }
+p { overflow-wrap: anywhere; }
+.notice { background: #e6eee5; border-left: 3px solid #426c50; padding: 1rem; }
+.muted, footer { color: #465b55; }
+button, select, textarea { font: inherit; }
+button { min-height: 44px; padding: .65rem 1rem; border: 1px solid #647b73; border-radius: .35rem; background: #fffef9; color: #183a36; margin: .25rem .5rem .25rem 0; cursor: pointer; }
+button:hover:enabled { background: #e6eee5; }
+button:disabled { color: #59645e; background: #e3e5df; cursor: default; }
+button.primary { background: #24584a; color: #fff; border-color: #24584a; }
+button.primary:hover:enabled { background: #153b30; }
+button.primary:disabled { background: #dee4db; border-color: #647b73; color: #4b6156; }
+:focus-visible { outline: 3px solid #a64225; outline-offset: 3px; }
+h2:focus { outline: none; }
+select { padding: .45rem; color: inherit; background: white; }
+.days { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.day { border: 1px solid #b2bdb2; background: #fffef9; padding: 1.25rem; border-radius: .5rem; }
+.stimulus { font-size: 2rem; }
+.option { display: block; min-width: min(100%, 15rem); text-align: left; }
+.answer { min-height: 5rem; padding: 1rem; background: #e9ede4; border: 1px dashed #647b73; }
+.tokens { margin: 1rem 0; }
+.token { font-size: 1.25rem; }
+.romaji { display: block; font-size: .8rem; color: #465b55; }
+rt { font-size: .55em; }
+label { display: block; }
+textarea { display: block; width: 100%; max-width: 38rem; margin: .5rem 0; padding: .75rem; color: inherit; background: #fff; }
+.feedback { padding: 1rem; border-left: 3px solid #a64225; background: #fff0e3; }
+.feedback.correct { border-color: #24584a; background: #e6eee5; }
+.quiet { display: block; margin-top: 1.5rem; }
+.score { font-size: 2.5rem; font-weight: 700; }
+footer { border-top: 1px solid #b2bdb2; padding-top: 1rem; font-size: .85rem; }
