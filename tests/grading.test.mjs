@@ -14,6 +14,24 @@ test('sentence order requires exact tokens in exact order', () => {
     assert.equal(gradeSentenceOrder(order, wrong).correct, false);
   }
 });
+const missingToken = [...order.answer_order];
+delete missingToken[1];
+const inheritedToken = [...missingToken];
+delete inheritedToken[1];
+Object.setPrototypeOf(inheritedToken, Object.assign(Object.create(Array.prototype), {
+  1: order.answer_order[1]
+}));
+for (const [name, answer] of [
+  ['all-hole', new Array(order.answer_order.length)],
+  ['partially sparse', [order.answer_order[0], , order.answer_order[2]]],
+  ['deleted-token', missingToken],
+  ['inherited-token', inheritedToken]
+]) {
+  test(`sentence order rejects ${name} answer arrays`, () => {
+    assert.equal(gradeSentenceOrder(order, answer).correct, false);
+    assert.deepEqual(gradeSentenceOrder(order, answer).correctIds, order.answer_order);
+  });
+}
 test('situational choice accepts all listed alternatives and rejects others', () => {
   const item = { ...situation, answer_option_ids: ['first', 'second'] };
   assert.equal(gradeSituationalChoice(item, 'first').correct, true);
